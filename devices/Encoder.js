@@ -28,6 +28,7 @@ function Encoder(/*=PIN*/pina, /*=PIN*/pinb, callback) {
       case 0b10 : if (a) s--; if (!b) s++; break;
       case 0b11 : if (!a) s++; if (!b) s--; break;
     }
+    console.log(this.last);
     this.last = a | (b<<1);
     if (s!==0) callback(s);
   };
