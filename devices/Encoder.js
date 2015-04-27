@@ -39,5 +39,6 @@ function Encoder(/*=PIN*/pina, /*=PIN*/pinb, callback) {
 }
 
 exports.connect = function(pina, pinb, callback) {
+  console.log('Encoder created');
   return new Encoder(pina, pinb, callback);
 };
