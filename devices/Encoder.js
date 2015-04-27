@@ -28,7 +28,6 @@ function Encoder(/*=PIN*/pina, /*=PIN*/pinb, callback) {
       case 0b10 : if (a) s--; if (!b) s++; break;
       case 0b11 : if (!a) s++; if (!b) s--; break;
     }
-    console.log(this.last);
     this.last = a | (b<<1);
     if (s!==0) callback(s);
   };
@@ -39,6 +38,5 @@ function Encoder(/*=PIN*/pina, /*=PIN*/pinb, callback) {
 }
 
 exports.connect = function(pina, pinb, callback) {
-  console.log('Encoder created');
   return new Encoder(pina, pinb, callback);
 };
